@@ -203,7 +203,7 @@
         // Function to add custom fountain markers only if near the searched location
         function addCustomFountainsIfNearby(lat, lon) {
             const maxDistance = radius; // Distance in meters
-            fetch('fountainsData.json')
+            fetch('https://raw.githubusercontent.com/Zaxiens/Aquam/refs/heads/main/fountainsData.json')
                 .then(response => response.json())
                 .then(customFountains => {
                     customFountains.forEach(fountain => {
