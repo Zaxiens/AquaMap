@@ -1,7 +1,7 @@
 [
     {
-        "lat": 55.73570924467982,
-        "lon": 24.335108156534147,
+        "lat": 55.735667,
+        "lon": 24.334998,
         "name": "Vandens Ėmimo Kolonėlė",
         "details": "Vieta: Parko g., Gerimo fontanelis - Eksploatuojamas"
     },
@@ -12,20 +12,20 @@
         "details": "Vieta: Senvagė 2, Gerimo fontanelis - Eksploatuojamas"
     },
     {
-        "lat": 55.73209972939038, 
-        "lon": 24.36791709632744,
+        "lat": 55.73201357440272, 
+        "lon": 24.367972677045568,
         "name": "Vandens Ėmimo Kolonėlė",
         "details": "Vieta: Tiskeviciaus, Gerimo fontanelis - Eksploatuojamas"
     },
     {
-        "lat": 55.73008083052848, 
-        "lon": 24.364491942348323,
+        "lat": 55.72991545029289,
+        "lon": 24.36450525859684,
         "name": "Vandens Ėmimo Kolonėlė",
         "details": "Vieta: Senvagė 1, Gerimo fontanelis - Eksploatuojamas"
     },
     {
-        "lat": 55.728896254277466, 
-        "lon": 24.362858615358764,
+        "lat": 55.728823802156754, 
+        "lon": 24.362762764412746,
         "name": "Vandens Ėmimo Kolonėlė",
         "details": "Vieta: Laisvės a., Gerimo fontanelis - Eksploatuojamas"
     },
@@ -36,8 +36,8 @@
         "details": "Vieta: Nepriklausomybes a., Gerimo fontanelis - Eksploatuojamas"
     },
     {
-        "lat": 55.72313186367518, 
-        "lon": 24.35757106749208,
+        "lat": 55.72304663231158, 
+        "lon": 24.357578615028185,
         "name": "Vandens Ėmimo Kolonėlė",
         "details": "Vieta: Danutes 3, Gerimo fontanelis - Eksploatuojamas"    
     }
