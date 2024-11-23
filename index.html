@@ -351,33 +351,6 @@ function addCustomFountainsIfNearby(lat, lon) {
             return deg * (Math.PI / 180);
         }
 
-        // Function to search by city/location
-        function searchLocation() {
-            clearMarkers();
-            const location = document.getElementById('locationInput').value;
-            if (location) {
-                fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(location)}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.length > 0) {
-                            const { lat, lon } = data[0];
-                            map.setView([lat, lon], 13);
-                            userMarker = L.marker([lat, lon], { icon: selectedIcon, title: "Ieškota Vieta" }).addTo(map).bindPopup("Ieškota Vieta").openPopup();
-                            drawSearchRadius(lat, lon,  radius);
-                            fetchNearbyFountains(lat, lon);
-                            addCustomFountainsIfNearby(lat, lon);
-                            updateFountainsList(lat, lon);
-                        } else {
-                            alert("Vieta nerasta");
-                        }
-                    })
-                    .catch(err => {
-                        console.error("Error fetching location data:", err);
-                    });
-            } else {
-                alert("Please enter a location to search.");
-            }
-        }
 
         // Event listener to add a marker when the map is clicked
         map.on('click', function(e) {
