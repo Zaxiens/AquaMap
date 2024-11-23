@@ -4,106 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AquaMap</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/Zaxiens/AquaMap/refs/heads/main/aqualogo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <style>
- body, html {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
-
-#map {
-  height: 100vh;
-  width: 100%;
-}
-
-.search-bar {
-  position: absolute;
-  top: 50px;
-  right: 10px;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 10px;
-  padding: 10px;
-  width: 500px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.search-bar input {
-  flex-grow: 1;
-  padding: 5px;
-  margin-right: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.search-bar button {
-  padding: 5px 10px;
-  margin: 2.5px;
-  border: none;
-  background-color: #007BFF;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.radius-input {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  z-index: 1000;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.radius-input label {
-  margin-right: 5px;
-}
-
-.radius-input input {
-  width: 80px;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-h1 {
-  font-weight: bold;
-  position: absolute;
-  top: -65px;
-  left: 35%;
-  text-align: center;
-  color: hsl(194, 99%, 60%);
-  -webkit-text-stroke: 5px hsl(0, 0%, 0%);
-}
-
-.fix-stroke {
-    paint-order: stroke fill;
-}
-
-@media (max-width: 768px) {
-  .search-bar {
-    width: 90%;
-    max-width: 400px;
-  }
-
-  h1 {
-    font-size: 1.8rem;
-    -webkit-text-stroke: 3px rgba(3, 3, 3, 0.845);
-  }
-}
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="search-bar">
         <h1 class="fix-stroke">AquaMap</h1>
-        <input type="text" id="locationInput" placeholder="Įveskite miestą arba vietą" onkeypress="if(event.key === 'Enter') searchLocation()">
+        <div class="autocomplete-container">
+            <input class="input" type="text" id="locationInput" placeholder="Įveskite miestą arba vietą">
+            <div id="autocompleteResults" class="autocomplete-results"></div>
+        </div>
         <button onclick="searchLocation()">Ieškoti</button>
         <button onclick="locateUser()">Surasti mane</button>
     </div>
@@ -111,6 +23,14 @@ h1 {
         <label for="radiusInput">Paieškos dydis (m):</label>
         <input type="number" id="radiusInput" value="5000" min="100" max="20000" step="100" onchange="updateRadius()">
     </div>
+
+    <div class="fountain-list-container">
+        <button id="fountainListButton" class="circle-button">☰</button>
+        <div id="fountainListModal" class="fountain-list-modal">
+            <div id="fountainListContent"></div>
+        </div>
+    </div>
+
     <div id="map"></div>
 
     <script>
@@ -131,22 +51,22 @@ h1 {
 
         // Custom icon for selected location
         var selectedIcon = L.icon({
-            iconUrl: 'https://raw.githubusercontent.com/Zaxiens/Aquam/refs/heads/main/marker.png',
-            iconSize: [52, 52], // Make the icon larger
+            iconUrl: 'https://raw.githubusercontent.com/Zaxiens/AquaMap/refs/heads/main/marker.png',
+            iconSize: [52, 52], 
             iconAnchor: [26, 48],
             popupAnchor: [0, -50]
         });
 
         var drinkingFountainIcon = L.icon({
-        iconUrl: 'https://raw.githubusercontent.com/Zaxiens/Aquam/refs/heads/main/Fmarker.png', // Replace with the actual path to your icon image
-        iconSize: [32, 32], // Adjust the size as needed
-        iconAnchor: [18, 28], // Anchor point
-        popupAnchor: [0, -32] // Position of the popup
+        iconUrl: 'https://raw.githubusercontent.com/Zaxiens/AquaMap/refs/heads/main/Fmarker.png', 
+        iconSize: [32, 32], 
+        iconAnchor: [18, 28], 
+        popupAnchor: [0, -32]
         });
 
         // Radius variable
-        var radius = parseInt(document.getElementById('radiusInput').value); // Default search radius in meters
-
+        var radius = parseInt(document.getElementById('radiusInput').value);
+        
         // Function to update the radius when input changes
         function updateRadius() {
             radius = parseInt(document.getElementById('radiusInput').value);
@@ -163,7 +83,118 @@ h1 {
                 map.removeLayer(searchCircle);
                 searchCircle = null;
             }
+            if (drawnLine) {
+            map.removeLayer(drawnLine);
+            drawnLine = null;
+    }
+}
+
+
+let debounceTimer;
+        const autocompleteResults = document.getElementById('autocompleteResults');
+        const locationInput = document.getElementById('locationInput');
+
+        locationInput.addEventListener('input', function() {
+            clearTimeout(debounceTimer);
+            const query = this.value.trim();
+            
+            if (query.length < 3) {
+                autocompleteResults.style.display = 'none';
+                return;
+            }
+
+            debounceTimer = setTimeout(() => {
+                fetchLocationSuggestions(query);
+            }, 300);
+        });
+
+        function fetchLocationSuggestions(query) {
+            const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&limit=5`;
+            
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    displayAutocompleteSuggestions(data);
+                })
+                .catch(error => {
+                    console.error('Error fetching suggestions:', error);
+                });
         }
+
+        function displayAutocompleteSuggestions(suggestions) {
+            if (!suggestions.length) {
+                autocompleteResults.style.display = 'none';
+                return;
+            }
+
+            autocompleteResults.innerHTML = '';
+            suggestions.forEach(suggestion => {
+                const div = document.createElement('div');
+                div.className = 'autocomplete-item';
+                div.textContent = suggestion.display_name;
+                
+                div.addEventListener('click', () => {
+                    locationInput.value = suggestion.display_name;
+                    autocompleteResults.style.display = 'none';
+                    searchLocation(suggestion.lat, suggestion.lon);
+                });
+
+                autocompleteResults.appendChild(div);
+            });
+            
+            autocompleteResults.style.display = 'block';
+        }
+
+        // Modify your searchLocation function to accept coordinates
+        function searchLocation(lat, lon) {
+            clearMarkers();
+            
+            if (lat && lon) {
+                // Direct coordinates provided from autocomplete
+                map.setView([lat, lon], 13);
+                userMarker = L.marker([lat, lon], { icon: selectedIcon, title: "Ieškota Vieta" }).addTo(map).bindPopup("Ieškota Vieta").openPopup();
+                drawSearchRadius(lat, lon, radius);
+                fetchNearbyFountains(lat, lon);
+                addCustomFountainsIfNearby(lat, lon);
+                updateFountainsList(lat, lon);
+            } else {
+                const location = document.getElementById('locationInput').value;
+                if (location) {
+                    fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(location)}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.length > 0) {
+                                const { lat, lon } = data[0];
+                                map.setView([lat, lon], 13);
+                                userMarker = L.marker([lat, lon], { icon: selectedIcon, title: "Ieškota Vieta" }).addTo(map).bindPopup("Ieškota Vieta").openPopup();
+                                drawSearchRadius(lat, lon, radius);
+                                fetchNearbyFountains(lat, lon);
+                                addCustomFountainsIfNearby(lat, lon);
+                                updateFountainsList(lat, lon);
+                            } else {
+                                alert("Vieta nerasta");
+                            }
+                        })
+                        .catch(err => {
+                            console.error("Error fetching location data:", err);
+                        });
+                } else {
+                    alert("Norėdami ieškoti, įveskite vietą.");
+                }
+            }
+        }
+
+        // Close autocomplete when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!autocompleteResults.contains(e.target) && e.target !== locationInput) {
+                autocompleteResults.style.display = 'none';
+            }
+        });
+
+
+
+
+
 
         // Function to locate user and place a marker
         function locateUser() {
@@ -174,9 +205,10 @@ h1 {
                     const lon = position.coords.longitude;
                     map.setView([lat, lon], 15);
                     userMarker = L.marker([lat, lon], { icon: selectedIcon, title: "Jūs esate čia" }).addTo(map).bindPopup("Jūs esate čia").openPopup();
-                    drawSearchRadius(lat, lon, radius); // 5000m radius
+                    drawSearchRadius(lat, lon, radius);
                     fetchNearbyFountains(lat, lon);
                     addCustomFountainsIfNearby(lat, lon);
+                    updateFountainsList(lat, lon);
                 }, () => {
                     alert("Ši naršyklė nepalaiko geografinės vietos.");
                 });
@@ -198,18 +230,17 @@ h1 {
             }).addTo(map);
         }
 
-        // Function to fetch and add nearby public fountains using Overpass API
-        function fetchNearbyFountains(lat, lon) {
-    // First, fetch custom fountains
+        var selectedFountainMarker = null;
+        var initialZoom = 13;
+
+function fetchNearbyFountains(lat, lon) {
     fetch('fountainsData.json')
         .then(response => response.json())
         .then(customFountains => {
-            // Then fetch Overpass fountains
-            const overpassUrl = `https://overpass-api.de/api/interpreter?data=[out:json];node[amenity=drinking_water](around:${radius},${lat},${lon});out;`;
+            const overpassUrl = `https://overpass-api.de/api/interpreter?data=[out:json];node[amenity=drinking_water][access=yes](around:${radius},${lat},${lon});out;`;
             fetch(overpassUrl)
                 .then(response => response.json())
                 .then(data => {
-                    // Filter out Overpass markers near custom fountains
                     const filteredOverpassElements = data.elements.filter(element => 
                         !customFountains.some(fountain => 
                             getDistanceFromLatLonInMeters(
@@ -217,20 +248,28 @@ h1 {
                                 element.lon, 
                                 fountain.lat, 
                                 fountain.lon
-                            ) <= 50 // 50 meters threshold
+                            ) <= 50
                         )
                     );
 
-                    // Add filtered Overpass markers
                     filteredOverpassElements.forEach(element => {
+                        const googleMapsLink = `https://www.google.com/maps/dir/?api=1&destination=${element.lat},${element.lon}`;
+                        const wazeLink = `https://www.waze.com/ul?ll=${element.lat}%2C${element.lon}&navigate=yes`;
+
                         const popupContent = `
                             <b>Vieša vandens stotelė</b><br>
                             ${element.tags?.description || 'Papildomos informacijos nėra.'}<br>
+                        <div style="margin-top: 2px;">
+                            <a href="${googleMapsLink}" target="_blank" style="color: #4285F4; text-decoration: none; margin-right: 10px;">
+                                🗺️ Google Maps
+                            </a>
+                            <a href="${wazeLink}" target="_blank" style="color: #33CCFF; text-decoration: none;">
+                                🚗 Waze
+                            </a>
+                        </div>
                             <small style="color: gray;">Šaltinis: Overpass</small>
                         `;
-                        L.marker([element.lat, element.lon], { icon: drinkingFountainIcon })
-                            .addTo(markersLayer)
-                            .bindPopup(popupContent);
+                        addMarkerWithLineDrawing(element.lat, element.lon, popupContent);
                     });
                 })
                 .catch(err => {
@@ -242,29 +281,62 @@ h1 {
         });
 }
 
-        // Function to add custom fountain markers only if near the searched location
-        function addCustomFountainsIfNearby(lat, lon) {
-            const maxDistance = radius; // Distance in meters
-            fetch('fountainsData.json')
-                .then(response => response.json())
-                .then(customFountains => {
-                    customFountains.forEach(fountain => {
-                        const distance = getDistanceFromLatLonInMeters(lat, lon, fountain.lat, fountain.lon);
-                        if (distance <= maxDistance) {
-                        const popupContent = `
-                        <b>${fountain.name || "Vieša vandens stotelė"}</b><br>
-                        ${fountain.details || 'Papildomos informacijos nėra.'}<br>
-                        <small style="color: gray;"> Šaltinis: AquaMap </small>
-                        `;
-                            L.marker([fountain.lat, fountain.lon], { icon: drinkingFountainIcon }).addTo(markersLayer).bindPopup(popupContent);
-                        }
-                    });
+function addCustomFountainsIfNearby(lat, lon) {
+    const maxDistance = radius;
+    fetch('fountainsData.json')
+        .then(response => response.json())
+        .then(customFountains => {
+            customFountains.forEach(fountain => {
+                const distance = getDistanceFromLatLonInMeters(lat, lon, fountain.lat, fountain.lon);
+                if (distance <= maxDistance) {
+                    const locationName = fountain.name || "Vieša vandens stotelė";
+                    const source = fountain.source || "AquaMap";
+                    const encodedName = encodeURIComponent(locationName);
+                    const googleMapsLink = `https://www.google.com/maps/dir/?api=1&destination=${fountain.lat},${fountain.lon}&destination_name=${encodedName}`;
+                    const wazeLink = `https://www.waze.com/ul?ll=${fountain.lat}%2C${fountain.lon}&navigate=yes&name=${encodedName}`;
+                    
+                    const popupContent = `
+                     ${fountain.photo ? `<img src="${fountain.photo}" style="width: 100%; max-width: 250px; height: auto; margin-bottom: 10px; padding: 15px; border-radius: 20px; display: block; margin-left: auto; margin-right: auto;">` : ''}
+                    <b>${fountain.name || "Vieša vandens stotelė"}</b><br>
+                    ${fountain.details || 'Papildomos informacijos nėra.'}<br>
+                    <div style="margin-top: 2px;">
+                        <a href="${googleMapsLink}" target="_blank" style="color: #4285F4; text-decoration: none; margin-right: 10px;">
+                            🗺️ Google Maps
+                        </a>
+                        <a href="${wazeLink}" target="_blank" style="color: #33CCFF; text-decoration: none;">
+                            🚗 Waze
+                        </a>
+                    </div>
+                    <small style="color: gray;"> Šaltinis: ${source} </small>
+                    `;
+                    addMarkerWithLineDrawing(fountain.lat, fountain.lon, popupContent);
+                }
+            });
+        });
+}
+
+        function zoomToFountain(lat, lon) {
+            const currentZoom = map.getZoom();
+            const tempZoom = currentZoom === 17 ? 16 : 17;
+            map.setView([lat, lon], tempZoom, { animate: false }); 
+
+        setTimeout(() => {
+            map.setView([lat, lon], 17, {
+                animate: true,
+                pan: {
+                    duration: 2
+                },
+                zoom: {
+                    duration: 2
+                }
                 });
+            }, 50); 
         }
+
 
         // Helper function to calculate distance between two coordinates in meters
         function getDistanceFromLatLonInMeters(lat1, lon1, lat2, lon2) {
-            const R = 6371000; // Radius of the Earth in meters
+            const R = 6371000; 
             const dLat = deg2rad(lat2 - lat1);
             const dLon = deg2rad(lon2 - lon1);
             const a =
@@ -294,6 +366,7 @@ h1 {
                             drawSearchRadius(lat, lon,  radius);
                             fetchNearbyFountains(lat, lon);
                             addCustomFountainsIfNearby(lat, lon);
+                            updateFountainsList(lat, lon);
                         } else {
                             alert("Vieta nerasta");
                         }
@@ -315,7 +388,206 @@ h1 {
             drawSearchRadius(lat, lon, radius);
             fetchNearbyFountains(lat, lon);
             addCustomFountainsIfNearby(lat, lon);
+            updateFountainsList(lat, lon);
         });
+
+
+
+
+// Global variable to store the current hover line
+let hoverLine = null;
+let hoverCircle = null;
+fountainListContent.innerHTML = '<p>Nerasta vandens stoteliu, reikia pirma pažymėti vieta.</p>';
+
+function updateFountainsList(lat, lon) {
+    const maxDistance = radius;
+    const fountainListContent = document.getElementById('fountainListContent');
+    fountainListContent.innerHTML = '';
+
+    Promise.all([
+        fetch('fountainsData.json').then(response => response.json()),
+        fetch(`https://overpass-api.de/api/interpreter?data=[out:json];node[amenity=drinking_water][access=yes](around:${maxDistance},${lat},${lon});out;`)
+            .then(response => response.json())
+    ]).then(([customFountains, overpassData]) => {
+        fountainsList = [
+            ...customFountains.filter(fountain => 
+                getDistanceFromLatLonInMeters(lat, lon, fountain.lat, fountain.lon) <= maxDistance
+            ),
+            ...overpassData.elements.filter(element => 
+                !customFountains.some(fountain => 
+                    getDistanceFromLatLonInMeters(
+                        element.lat, 
+                        element.lon, 
+                        fountain.lat, 
+                        fountain.lon
+                    ) <= 50
+                )
+            )
+        ].map(fountain => {
+            const distance = fountain.lat ? 
+                getDistanceFromLatLonInMeters(lat, lon, fountain.lat, fountain.lon) :
+                getDistanceFromLatLonInMeters(lat, lon, fountain.lat, fountain.lon);
+            return { ...fountain, distance };
+        }).sort((a, b) => a.distance - b.distance);
+
+        fountainsList.forEach((fountain) => {
+            const listItem = document.createElement('div');
+            listItem.classList.add('fountain-list-item');
+            
+            // Determine fountain coordinates and name
+            const fountainLat = fountain.lat || fountain.lat;
+            const fountainLon = fountain.lon || fountain.lon;
+            const fountainName = fountain.name || "Vieša vandens stotelė";
+
+            // Create list item with hover and click interactions
+            listItem.innerHTML = `
+                <strong>${fountainName}</strong><br>
+                <small>${fountain.details || fountain.tags?.description || 'Papildomos informacijos nėra.'}</small><br>
+                <small style="color: gray;">${Math.round(fountain.distance)}m</small>
+            `;
+
+            // Hover event to draw line
+            listItem.addEventListener('mouseenter', () => {
+                if (hoverLine) {
+                    map.removeLayer(hoverLine);
+                    map.removeLayer(hoverCircle);
+                }
+
+                // Create a new line from current location to fountain
+                hoverLine = L.polyline([
+                    [lat, lon],
+                    [fountainLat, fountainLon]
+                ], {
+                    color: 'blue',
+                    weight: 3,
+                    dashArray: '10, 10',
+                    opacity: 0.7
+                }).addTo(map);
+
+                
+                hoverCircle = L.circleMarker([fountainLat, fountainLon], {
+                    radius: 30, 
+                    color: '#edff00',
+                    fillOpacity: 0.5,
+                    weight: 0
+                }).addTo(map);
+            });
+
+            // Mouse leave event to remove line
+            listItem.addEventListener('mouseleave', () => {
+                if (hoverLine) {
+                    map.removeLayer(hoverLine);
+                    hoverLine = null;
+                    map.removeLayer(hoverCircle);
+                    hoverCircle = null;
+                }
+            });
+
+            // Click event to zoom and open marker popup
+            listItem.addEventListener('click', () => {
+                // Remove hover line if exists
+                if (hoverLine) {
+                    map.removeLayer(hoverLine);
+                    hoverLine = null;
+                    map.removeLayer(hoverCircle);
+                    hoverCircle = null;
+                }
+
+                // Find and trigger the marker
+                markersLayer.eachLayer(marker => {
+                    const markerLat = marker.getLatLng().lat;
+                    const markerLon = marker.getLatLng().lng;
+                    
+                    // Check if marker coordinates match fountain coordinates
+                    if (Math.abs(markerLat - fountainLat) < 0.0001 && 
+                        Math.abs(markerLon - fountainLon) < 0.0001) {
+                        marker.openPopup();
+                        zoomToFountain(fountainLat, fountainLon);
+                        drawLineToUser(fountainLat, fountainLon);
+                    }
+                });
+            });
+
+            fountainListContent.appendChild(listItem);
+        });
+
+        // If no fountains found
+        if (fountainsList.length === 0) {
+            fountainListContent.innerHTML = '<p>Nerasta vandens stoteliu</p>';
+        }
+    }).catch(error => {
+        console.error('Error fetching fountains:', error);
+        fountainListContent.innerHTML = '<p>Klaida vandens stoteliu</p>';
+    });
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const fountainListButton = document.getElementById('fountainListButton');
+    const fountainListModal = document.getElementById('fountainListModal');
+
+    if (fountainListButton && fountainListModal) {
+        fountainListButton.addEventListener('click', function(event) {
+            event.stopPropagation();
+            fountainListModal.classList.toggle('active');
+        });
+
+        // Close modal if clicking outside
+        document.addEventListener('click', function(event) {
+            if (!fountainListModal.contains(event.target) && 
+                event.target !== fountainListButton) {
+                fountainListModal.classList.remove('active');
+            }
+        });
+    } else {
+        console.error('Fountain list elements not found');
+    }
+});
+
+
+
+
+
+let drawnLine = null;
+
+// Function to draw a line from the fountain marker to the userMarker
+function drawLineToUser(fountainLat, fountainLon) {
+    if (drawnLine) {
+        map.removeLayer(drawnLine);
+    }
+
+    if (userMarker) {
+        const userLatLng = userMarker.getLatLng();
+        drawnLine = L.polyline(
+            [
+                [userLatLng.lat, userLatLng.lng],
+                [fountainLat, fountainLon]
+            ],
+            {
+                color: '#007BFF',
+                weight: 3,
+                dashArray: '10, 10',
+                opacity: 0.7
+            }
+        ).addTo(map);
+    } else {
+        alert("Please set your location first.");
+    }
+}
+
+
+// Update your marker click logic to include the line drawing
+function addMarkerWithLineDrawing(fountainLat, fountainLon, popupContent) {
+    const marker = L.marker([fountainLat, fountainLon], { icon: drinkingFountainIcon })
+        .addTo(markersLayer)
+        .bindPopup(popupContent)
+        .on('click', function () {
+        zoomToFountain(fountainLat, fountainLon);
+        drawLineToUser(fountainLat, fountainLon);
+    });
+
+}
+ 
     </script>
 </body>
 </html>
