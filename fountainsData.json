@@ -165,5 +165,24 @@
         "lon": "25.2940467",
         "name": "Vandens Geriamoji Kolonėlė",
         "details": "Maironio g. 2A (Bernardinų sodai 3) Pritaikyta augintiniams"
+    },
+    {
+        "lat": "54.897110367849436",
+        "lon": "23.885428673698097",
+        "name": "Vandens Geriamoji Kolonėlė",
+        "details": "Prie seminarijos – Rotušės a. 19",
+        "photo": "data/ihHZe8XPMb.png"
+    },
+    {
+        "lat": "54.89881971732188",
+        "lon": "23.91384235021563",
+        "name": "Vandens Geriamoji Kolonėlė",
+        "details": "Vandens gėrimo fontanėlis Studentų skvere – S. Daukanto g. 25"
+    },
+    {
+        "lat": "54.91611584164963",
+        "lon": "23.973251319531116",
+        "name": "Vandens Geriamoji Kolonėlė",
+        "details": "Vandens gėrimo fontanėlis Draugystės parke – Kovo 11-osios g. 53C"
     }
 ]
