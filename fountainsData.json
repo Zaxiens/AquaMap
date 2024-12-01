@@ -184,5 +184,64 @@
         "lon": "23.973251319531116",
         "name": "Vandens Geriamoji Kolonėlė",
         "details": "Vandens gėrimo fontanėlis Draugystės parke – Kovo 11-osios g. 53C"
+    },
+    {
+        "lat": "54.91561961847888",
+        "lon": "23.833882719981577",
+        "name": "Vandens Geriamoji Kolonėlė",
+        "details": "Lampėdžių paplūdimyje – Raudondvario pl. 161A"
+    },
+    {
+        "lat": "54.8966614863007",
+        "lon": "23.968895833981534",
+        "name": "Vandens Geriamoji Kolonėlė",
+        "details": "Apžvalgos aikštelėje – Biržiškių g. 4 ",
+        "photo": "data/KuDfvur4Ii.jpg"
+    },
+    {
+        "lat": "55.068928502233724",
+        "lon": "24.278032830678534",
+        "name": "Vandens Geriamoji Kolonėlė",
+        "details": "Taikos g. (prie bažnyčios) "
+    },
+    {
+        "lat": "55.69855896887822",
+        "lon": "21.154382713982066",
+        "name": "Vandens Geriamoji Kolonėlė",
+        "details": "Paryžiaus Komunos g. 18T, Pastatymo metai 2021"
+    },
+    {
+        "lat": "55.70002160558642",
+        "lon": "21.159936417447664",
+        "name": "Vandens Geriamoji Kolonėlė",
+        "details": "Paryžiaus Komunos g. 18T, Pastatymo metai 2021"
+    },
+    {
+        "lat": "55.73257195409519",
+        "lon": "21.125548428001366",
+        "name": "Vandens Geriamoji Kolonėlė",
+        "details": "Geriamas vanduo, Liepojos g. 10B",
+        "source": "vanduo-klaipeda.maps.arcgis.com"
+    },
+    {
+        "lat": "55.64227831787155",
+        "lon": "21.17073047786791",
+        "name": "Vandens Geriamoji Kolonėlė",
+        "details": "Kairių g. 13",
+        "source": "vanduo-klaipeda.maps.arcgis.com"
+    },
+    {
+        "lat": "55.64148288158229",
+        "lon": "21.170990635327218",
+        "name": "Vandens Geriamoji Kolonėlė",
+        "details": "Kairių g. 13",
+        "source": "vanduo-klaipeda.maps.arcgis.com"
+    },
+    {
+        "lat": "55.71117637590904",
+        "lon": "21.395003914552994",
+        "name": "Vandens Geriamoji Kolonėlė",
+        "details": "Klaipėdos g. 38, Gargždai",
+        "source": "vanduo-klaipeda.maps.arcgis.com"
     }
 ]
