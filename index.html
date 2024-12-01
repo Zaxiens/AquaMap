@@ -237,7 +237,7 @@ function fetchNearbyFountains(lat, lon) {
     fetch('fountainsData.json')
         .then(response => response.json())
         .then(customFountains => {
-            const overpassUrl = `https://overpass-api.de/api/interpreter?data=[out:json];node[amenity=drinking_water][access=yes](around:${radius},${lat},${lon});out;`;
+            const overpassUrl = `https://overpass-api.de/api/interpreter?data=[out:json];node[amenity=drinking_water](around:${radius},${lat},${lon});out;`;
             fetch(overpassUrl)
                 .then(response => response.json())
                 .then(data => {
@@ -379,7 +379,7 @@ function updateFountainsList(lat, lon) {
 
     Promise.all([
         fetch('fountainsData.json').then(response => response.json()),
-        fetch(`https://overpass-api.de/api/interpreter?data=[out:json];node[amenity=drinking_water][access=yes](around:${maxDistance},${lat},${lon});out;`)
+        fetch(`https://overpass-api.de/api/interpreter?data=[out:json];node[amenity=drinking_water](around:${maxDistance},${lat},${lon});out;`)
             .then(response => response.json())
     ]).then(([customFountains, overpassData]) => {
         fountainsList = [
