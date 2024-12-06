@@ -243,5 +243,35 @@
         "name": "Vandens Geriamoji Kolonėlė",
         "details": "Klaipėdos g. 38, Gargždai",
         "source": "vanduo-klaipeda.maps.arcgis.com"
+    },
+    {
+        "lat": "56.323396",
+        "lon": "22.885550",
+        "name": "Geriamojo vandens gertuvė",
+        "details": "Vieta: Lazdynų Pelėdos g. 9, 85128 naujoji akmenė",
+        "photo": "data/cTaOflRrqh.png"
+    },
+    {
+        "lat": "55.253367466358505",
+        "lon": "22.28539605195527",
+        "name": "Vandens Geriamoji Kolonėlė",
+        "details": "Pilies aikštėje"
+    },
+    {
+        "lat": "55.253382698255194",
+        "lon": "22.303754640919287",
+        "name": "Vandens Geriamoji Kolonėlė"
+    },
+    {
+        "lat": "55.24446978",
+        "lon": "22.279200699751144",
+        "name": "Vandens Geriamoji Kolonėlė",
+        "details": "Vasaros estrada"
+    },
+    {
+        "lat": "55.25276004474157",
+        "lon": "22.290723919840588",
+        "name": "Vandens Geriamoji Kolonėlė",
+        "details": "J. V. Kalvano parkas"
     }
 ]
