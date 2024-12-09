@@ -1,15 +1,17 @@
 [
     {
-        "lat": 55.735667,
-        "lon": 24.334998,
+        "lat": "55.735667",
+        "lon": "24.334998",
         "name": "Vandens Geriamoji Kolonėlė",
-        "details": "Vieta: Parko g., Gerimo fontanelis - Eksploatuojamas"
+        "details": "Vieta: Parko g., Gerimo fontanelis - Eksploatuojamas",
+        "photo": "data/QERpHPYb06.png"
     },
     {
-        "lat": 55.7361675769517,
-        "lon": 24.36241048467855,
+        "lat": "55.7361675769517",
+        "lon": "24.36241048467855",
         "name": "Vandens Geriamoji Kolonėlė",
-        "details": "Vieta: Senvagė 2, Gerimo fontanelis - Eksploatuojamas"
+        "details": "Vieta: Senvagė 2, Gerimo fontanelis - Eksploatuojamas",
+        "photo": "data/Hm2TRA8DA7.png"
     },
     {
         "lat": 55.73201357440272,
@@ -18,22 +20,25 @@
         "details": "Vieta: Tiskeviciaus, Gerimo fontanelis - Eksploatuojamas"
     },
     {
-        "lat": 55.72991545029289,
-        "lon": 24.36450525859684,
+        "lat": "55.72991545029289",
+        "lon": "24.36450525859684",
         "name": "Vandens Geriamoji Kolonėlė",
-        "details": "Vieta: Senvagė 1, Gerimo fontanelis - Eksploatuojamas"
+        "details": "Vieta: Senvagė 1, Gerimo fontanelis - Eksploatuojamas",
+        "photo": "data/SuOOz6jjD5.png"
     },
     {
-        "lat": 55.728823802156754,
-        "lon": 24.362762764412746,
+        "lat": "55.728823802156754",
+        "lon": "24.362762764412746",
         "name": "Vandens Geriamoji Kolonėlė",
-        "details": "Vieta: Laisvės a., Gerimo fontanelis - Eksploatuojamas"
+        "details": "Vieta: Laisvės a., Gerimo fontanelis - Eksploatuojamas",
+        "photo": "data/xMmZR4EJGy.png"
     },
     {
-        "lat": 55.72647113663285,
-        "lon": 24.356621571183275,
+        "lat": "55.72647113663285",
+        "lon": "24.356621571183275",
         "name": "Vandens Geriamoji Kolonėlė",
-        "details": "Vieta: Nepriklausomybes a., Gerimo fontanelis - Eksploatuojamas"
+        "details": "Vieta: Nepriklausomybes a., Gerimo fontanelis - Eksploatuojamas",
+        "photo": "data/XKmBA63Rz1.png"
     },
     {
         "lat": 55.72304663231158,
