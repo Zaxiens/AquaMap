@@ -41,10 +41,11 @@
         "photo": "data/XKmBA63Rz1.png"
     },
     {
-        "lat": 55.72304663231158,
-        "lon": 24.357578615028185,
+        "lat": "55.72304663231158",
+        "lon": "24.357578615028185",
         "name": "Vandens Geriamoji Kolonėlė",
-        "details": "Vieta: Danutes 3, Gerimo fontanelis - Eksploatuojamas"
+        "details": "Vieta: Danutes 3, Gerimo fontanelis - Eksploatuojamas",
+        "photo": "data/2632127091933123539.jpg"
     },
     {
         "lat": "54.6992212",
