@@ -1,7 +1,7 @@
 body, html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 #map {
@@ -15,7 +15,7 @@ body, html {
     display: flex;
     align-items: center;
     gap: 10px;
-    top: 50px;
+    top: 20px;
     right: 20px;
     z-index: 1000;
     background: rgba(255, 255, 255, 0.8);
@@ -40,7 +40,7 @@ body, html {
     height: 30px;
     padding: 5px 15px;
     border: none;
-    background-color: #007BFF;
+    background-color: hsl(210 100% 60%);
     color: white;
     border-radius: 8px;
     cursor: pointer;
@@ -72,12 +72,14 @@ body, html {
 
 h1 {
     font-weight: bold;
-    font-family: Helvetica;
+    font-family: 'Azeret Mono', monospace;
     position: absolute;
-    top: -65px;
-    left: 35%;
+    top: 36px;
+    left: 28%;
     text-align: center;
-    color: hsl(194, 100%, 50%);
+    letter-spacing: 1px;
+    color: hsl(200 100% 60%);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     -webkit-text-stroke: 5px hsl(0, 0%, 0%);
 }
 
@@ -88,8 +90,8 @@ h1 {
 
 .fountain-list-container {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 25px;
+    right: 15px;
     z-index: 1000;
 }
 
@@ -98,7 +100,7 @@ h1 {
     height: 50px;
     font-size: 22px;
     border-radius: 50%;
-    background-color: #007BFF;
+    background-color: hsl(210 100% 60%);
     color: white;
     border: none;
     display: flex;
@@ -115,7 +117,7 @@ h1 {
     right: 20px;
     width: 300px;
     max-height: 400px;
-    background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     overflow-y: auto;
@@ -135,7 +137,7 @@ h1 {
 }
 
 .fountain-list-item:hover {
-    background-color: #f0f0f0;
+    background-color: rgba(231, 231, 231, 0.5);
 }
 
 .autocomplete-container {
@@ -174,13 +176,9 @@ h1 {
 }
 
 @media (max-width: 768px) {
-  .search-bar {
-    width: 90%;
-    max-width: 600px;
-  }
+    .search-bar {
+      width: 90%;
+      max-width: 600px;
+    }
 
-  h1 {
-    font-size: 1.8rem;
-    -webkit-text-stroke: 3px rgba(3, 3, 3, 0.845);
-  }
 }
