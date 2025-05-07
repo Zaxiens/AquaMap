@@ -1,289 +1,650 @@
 [
-  {
-      "lat": "55.735667",
-      "lon": "24.334998",
+    {
+      "lat": 55.735667,
+      "lon": 24.334998,
       "name": "Vandens Kolonėlė",
       "details": "Vieta: Parko g., Gerimo fontanelis - Eksploatuojamas",
-      "photo": "data/QERpHPYb06.png"
-  },
-  {
-      "lat": "55.7361675769517",
-      "lon": "24.36241048467855",
+      "photo": "data/QERpHPYb06.png",
+      "id": "fountain_1746618923304_d6ecy1alj",
+      "source": "AquaMap"
+    },
+    {
+      "lat": 55.7361675769517,
+      "lon": 24.36241048467855,
       "name": "Vandens Kolonėlė",
       "details": "Vieta: Senvagė 2, Gerimo fontanelis - Eksploatuojamas",
-      "photo": "data/Hm2TRA8DA7.png"
-  },
-  {
+      "photo": "data/Hm2TRA8DA7.png",
+      "id": "fountain_1746618923304_5nj62hd74",
+      "source": "AquaMap"
+    },
+    {
       "lat": 55.73201357440272,
       "lon": 24.367972677045568,
       "name": "Vandens Kolonėlė",
-      "details": "Vieta: Tiskeviciaus, Gerimo fontanelis - Eksploatuojamas"
-  },
-  {
-      "lat": "55.72991545029289",
-      "lon": "24.36450525859684",
+      "details": "Vieta: Tiskeviciaus, Gerimo fontanelis - Eksploatuojamas",
+      "id": "fountain_1746618923304_rl6734ef7",
+      "source": "AquaMap",
+      "photo": ""
+    },
+    {
+      "lat": 55.72991545029289,
+      "lon": 24.36450525859684,
       "name": "Vandens Kolonėlė",
       "details": "Vieta: Senvagė 1, Gerimo fontanelis - Eksploatuojamas",
-      "photo": "data/SuOOz6jjD5.png"
-  },
-  {
-      "lat": "55.728823802156754",
-      "lon": "24.362762764412746",
+      "photo": "data/SuOOz6jjD5.png",
+      "id": "fountain_1746618923304_7rhtptjii",
+      "source": "AquaMap"
+    },
+    {
+      "lat": 55.728823802156754,
+      "lon": 24.362762764412746,
       "name": "Vandens Kolonėlė",
       "details": "Vieta: Laisvės a., Gerimo fontanelis - Eksploatuojamas",
-      "photo": "data/xMmZR4EJGy.png"
-  },
-  {
-      "lat": "55.72647113663285",
-      "lon": "24.356621571183275",
+      "photo": "data/xMmZR4EJGy.png",
+      "id": "fountain_1746618923304_e8dua8ete",
+      "source": "AquaMap"
+    },
+    {
+      "lat": 55.72647113663285,
+      "lon": 24.356621571183275,
       "name": "Vandens Kolonėlė",
       "details": "Vieta: Nepriklausomybes a., Gerimo fontanelis - Eksploatuojamas",
-      "photo": "data/XKmBA63Rz1.png"
-  },
-  {
-      "lat": "55.72304663231158",
-      "lon": "24.357578615028185",
+      "photo": "data/XKmBA63Rz1.png",
+      "id": "fountain_1746618923304_3pqw5paoe",
+      "source": "AquaMap"
+    },
+    {
+      "lat": 55.72304663231158,
+      "lon": 24.357578615028185,
       "name": "Vandens Kolonėlė",
       "details": "Vieta: Danutes 3, Gerimo fontanelis - Eksploatuojamas",
-      "photo": "data/2632127091933123539.jpg"
-  },
-  {
-      "lat": "54.6992212",
-      "lon": "25.2661235",
+      "photo": "data/2632127091933123539.jpg",
+      "id": "fountain_1746618923304_qyyv8qmaw",
+      "source": "AquaMap"
+    },
+    {
+      "lat": 54.6992212,
+      "lon": 25.2661235,
       "name": "Geriamojo vandens gertuvė",
       "details": "Konstitucijos pr. prie Lietuvos vaikų ir jaunimo centro",
       "source": "vvandenys.maps.arcgis.com",
-      "photo": "data/Konstitucijos.jpg"
-  },
-  {
-      "lat": "54.6930178",
-      "lon": "25.2735582",
+      "photo": "data/Konstitucijos.jpg",
+      "id": "fountain_1746618923304_n2n0kj9me"
+    },
+    {
+      "lat": 54.6930178,
+      "lon": 25.2735582,
       "name": "Vandens Kolonėlė",
       "details": "Upės g. prie Baltojo tilto (Vilnius) Pritaikyta augintiniams",
       "source": "vvandenys.maps.arcgis.com",
-      "photo": "data/prie_Baltojo_tilto.PNG"
-  },
-  {
-      "lat": "54.6930147",
-      "lon": "25.2744862",
+      "photo": "data/prie_Baltojo_tilto.PNG",
+      "id": "fountain_1746618923304_x3gqziijc"
+    },
+    {
+      "lat": 54.6930147,
+      "lon": 25.2744862,
       "name": "Vandens Kolonėlė",
       "details": "Upės g. prieš PC „CUP“ (Vilnius) Pritaikyta augintiniams",
       "source": "vvandenys.maps.arcgis.com",
-      "photo": "data/pries_CUP.PNG"
-  },
-  {
-      "lat": "54.6920558",
-      "lon": "25.2451859",
+      "photo": "data/pries_CUP.PNG",
+      "id": "fountain_1746618923304_qcwl8dfeu"
+    },
+    {
+      "lat": 54.6920558,
+      "lon": 25.2451859,
       "name": "Vandens Kolonėlė",
       "details": "Birutės g. 32A (Vilnius) Pritaikyta augintiniams",
       "source": "vvandenys.maps.arcgis.com",
-      "photo": "data/Birytes_g_Vingis.jpg"
-  },
-  {
-      "lat": "54.6836399",
-      "lon": "25.2388293",
+      "photo": "data/Birytes_g_Vingis.jpg",
+      "id": "fountain_1746618923304_e8edtwb9i"
+    },
+    {
+      "lat": 54.6836399,
+      "lon": 25.2388293,
       "name": "Vandens Kolonėlė",
       "details": "Vingio parkas (Vilnius) Pritaikyta augintiniams",
       "source": "vvandenys.maps.arcgis.com",
-      "photo": "data/Vingio_gertuve.PNG"
-  },
-  {
-      "lat": "54.6827541",
-      "lon": "25.2395664",
+      "photo": "data/Vingio_gertuve.PNG",
+      "id": "fountain_1746618923304_wsziq3al0"
+    },
+    {
+      "lat": 54.6827541,
+      "lon": 25.2395664,
       "name": "Vandens Kolonėlė",
       "details": "Vingio parkas (Vilnius) Pritaikyta augintiniams",
       "source": "vvandenys.maps.arcgis.com",
-      "photo": "data/vingio_gertuve_2.PNG"
-  },
-  {
-      "lat": "54.6821418",
-      "lon": "25.2390449",
+      "photo": "data/vingio_gertuve_2.PNG",
+      "id": "fountain_1746618923304_nmujc5f7i"
+    },
+    {
+      "lat": 54.6821418,
+      "lon": 25.2390449,
       "name": "Vandens Kolonėlė",
       "details": "Vingio parkas (Vilnius) Pritaikyta augintiniams",
       "source": "vvandenys.maps.arcgis.com",
-      "photo": "data/vingio_gertuve_3.PNG"
-  },
-  {
-      "lat": "54.6931783",
-      "lon": "25.2985236",
+      "photo": "data/vingio_gertuve_3.PNG",
+      "id": "fountain_1746618923304_lkj8917na"
+    },
+    {
+      "lat": 54.6931783,
+      "lon": 25.2985236,
       "name": "Vandens Kolonėlė",
       "details": "Olimpiečių g. prie irklavimo bazės (Vilnius) Pritaikyta augintiniams",
       "source": "vvandenys.maps.arcgis.com",
-      "photo": "data/Olimpieciu.jpg"
-  },
-  {
-      "lat": "54.6883238",
-      "lon": "25.2739748",
+      "photo": "data/Olimpieciu.jpg",
+      "id": "fountain_1746618923304_woppem4el"
+    },
+    {
+      "lat": 54.6883238,
+      "lon": 25.2739748,
       "name": "Vandens Kolonėlė",
       "details": "Žemaitės skveras (Vilnius) Pritaikyta augintiniams",
       "source": "vvandenys.maps.arcgis.com",
-      "photo": "data/Žemaitės_skv.jpg"
-  },
-  {
-      "lat": "54.68439210722874",
-      "lon": "25.276698547087765",
+      "photo": "data/Žemaitės_skv.jpg",
+      "id": "fountain_1746618923304_cquajaanp"
+    },
+    {
+      "lat": 54.68439210722874,
+      "lon": 25.276698547087765,
       "name": "Vandens Kolonėlė",
       "details": "P. Cvirkos aikštė Pritaikyta augintiniams",
-      "source": "vvandenys.maps.arcgis.com"
-  },
-  {
-      "lat": "54.6859052",
-      "lon": "25.285419",
+      "source": "vvandenys.maps.arcgis.com",
+      "id": "fountain_1746618923304_5x22r2fam",
+      "photo": ""
+    },
+    {
+      "lat": 54.6859052,
+      "lon": 25.285419,
       "name": "Vandens Kolonėlė",
       "details": "Odminių skveras (Vilnius) Pritaikyta augintiniams",
       "source": "vvandenys.maps.arcgis.com",
-      "photo": "data/Odminiu_skveras.jpg"
-  },
-  {
-      "lat": "54.6815865",
-      "lon": "25.2865348",
+      "photo": "data/Odminiu_skveras.jpg",
+      "id": "fountain_1746618923304_n4i5gltg6"
+    },
+    {
+      "lat": 54.6815865,
+      "lon": 25.2865348,
       "name": "Vandens Kolonėlė",
       "details": "Šv. Jono g. ir Gaono g. sankirta (Vilnius)",
       "source": "vvandenys.maps.arcgis.com",
-      "photo": "data/Sv_Jonu.jpg"
-  },
-  {
-      "lat": "54.6793531",
-      "lon": "25.2838478",
+      "photo": "data/Sv_Jonu.jpg",
+      "id": "fountain_1746618923304_eu8nw93cu"
+    },
+    {
+      "lat": 54.6793531,
+      "lon": 25.2838478,
       "name": "Vandens Kolonėlė",
       "details": "Vokiečių gatvė (Vilnius)",
       "source": "vvandenys.maps.arcgis.com",
-      "photo": "data/Vokieciu.jpg"
-  },
-  {
-      "lat": "54.6794278",
-      "lon": "25.2877865",
+      "photo": "data/Vokieciu.jpg",
+      "id": "fountain_1746618923304_ti97r27w3"
+    },
+    {
+      "lat": 54.6794278,
+      "lon": 25.2877865,
       "name": "Vandens Kolonėlė",
       "details": "Rotušės aikštė (Vilnius) Pritaikyta augintiniams",
       "source": "vvandenys.maps.arcgis.com",
-      "photo": "data/Rotuse.jpg"
-  },
-  {
-      "lat": "54.6854598",
-      "lon": "25.2914554",
+      "photo": "data/Rotuse.jpg",
+      "id": "fountain_1746618923304_loa0s5fws"
+    },
+    {
+      "lat": 54.6854598,
+      "lon": 25.2914554,
       "name": "Vandens Kolonėlė",
       "details": "Pilių parko skveras (Vilnius)",
       "source": "vvandenys.maps.arcgis.com",
-      "photo": "data/Piliu_skveras.jpg"
-  },
-  {
-      "lat": "54.6848008",
-      "lon": "25.2940467",
+      "photo": "data/Piliu_skveras.jpg",
+      "id": "fountain_1746618923304_mi7ehgh4i"
+    },
+    {
+      "lat": 54.6848008,
+      "lon": 25.2940467,
       "name": "Vandens Kolonėlė",
-      "details": "Maironio g. 2A (Bernardinų sodai 3) Pritaikyta augintiniams"
-  },
-  {
-      "lat": "54.897110367849436",
-      "lon": "23.885428673698097",
+      "details": "Maironio g. 2A (Bernardinų sodai 3) Pritaikyta augintiniams",
+      "id": "fountain_1746618923304_18e64q1nf",
+      "source": "AquaMap",
+      "photo": ""
+    },
+    {
+      "lat": 54.897110367849436,
+      "lon": 23.885428673698097,
       "name": "Vandens Kolonėlė",
       "details": "Prie seminarijos – Rotušės a. 19",
-      "photo": "data/ihHZe8XPMb.png"
-  },
-  {
-      "lat": "54.89881971732188",
-      "lon": "23.91384235021563",
+      "photo": "data/ihHZe8XPMb.png",
+      "id": "fountain_1746618923304_pdpem1678",
+      "source": "AquaMap"
+    },
+    {
+      "lat": 54.89881971732188,
+      "lon": 23.91384235021563,
       "name": "Vandens Kolonėlė",
-      "details": "Vandens gėrimo fontanėlis Studentų skvere – S. Daukanto g. 25"
-  },
-  {
-      "lat": "54.91611584164963",
-      "lon": "23.973251319531116",
+      "details": "Vandens gėrimo fontanėlis Studentų skvere – S. Daukanto g. 25",
+      "id": "fountain_1746618923304_ef8vrni4z",
+      "source": "AquaMap",
+      "photo": ""
+    },
+    {
+      "lat": 54.91611584164963,
+      "lon": 23.973251319531116,
       "name": "Vandens Kolonėlė",
-      "details": "Vandens gėrimo fontanėlis Draugystės parke – Kovo 11-osios g. 53C"
-  },
-  {
-      "lat": "54.91561961847888",
-      "lon": "23.833882719981577",
+      "details": "Vandens gėrimo fontanėlis Draugystės parke – Kovo 11-osios g. 53C",
+      "id": "fountain_1746618923304_ndl2uzisj",
+      "source": "AquaMap",
+      "photo": ""
+    },
+    {
+      "lat": 54.91561961847888,
+      "lon": 23.833882719981577,
       "name": "Vandens Kolonėlė",
-      "details": "Lampėdžių paplūdimyje – Raudondvario pl. 161A"
-  },
-  {
-      "lat": "54.8966614863007",
-      "lon": "23.968895833981534",
+      "details": "Lampėdžių paplūdimyje – Raudondvario pl. 161A",
+      "id": "fountain_1746618923304_qxnxop34n",
+      "source": "AquaMap",
+      "photo": ""
+    },
+    {
+      "lat": 54.8966614863007,
+      "lon": 23.968895833981534,
       "name": "Vandens Kolonėlė",
       "details": "Apžvalgos aikštelėje – Biržiškių g. 4 ",
-      "photo": "data/KuDfvur4Ii.jpg"
-  },
-  {
-      "lat": "55.068928502233724",
-      "lon": "24.278032830678534",
+      "photo": "data/KuDfvur4Ii.jpg",
+      "id": "fountain_1746618923304_dkxfkpxxs",
+      "source": "AquaMap"
+    },
+    {
+      "lat": 55.068928502233724,
+      "lon": 24.278032830678534,
       "name": "Vandens Kolonėlė",
-      "details": "Taikos g. (prie bažnyčios) "
-  },
-  {
-      "lat": "55.69855896887822",
-      "lon": "21.154382713982066",
+      "details": "Taikos g. (prie bažnyčios) ",
+      "id": "fountain_1746618923304_5jpsbpaol",
+      "source": "AquaMap",
+      "photo": ""
+    },
+    {
+      "lat": 55.69855896887822,
+      "lon": 21.154382713982066,
       "name": "Vandens Kolonėlė",
-      "details": "Paryžiaus Komunos g. 18T, Pastatymo metai 2021"
-  },
-  {
-      "lat": "55.70002160558642",
-      "lon": "21.159936417447664",
+      "details": "Paryžiaus Komunos g. 18T, Pastatymo metai 2021",
+      "id": "fountain_1746618923304_mprxqvft2",
+      "source": "AquaMap",
+      "photo": ""
+    },
+    {
+      "lat": 55.70002160558642,
+      "lon": 21.159936417447664,
       "name": "Vandens Kolonėlė",
-      "details": "Paryžiaus Komunos g. 18T, Pastatymo metai 2021"
-  },
-  {
-      "lat": "55.73257195409519",
-      "lon": "21.125548428001366",
+      "details": "Paryžiaus Komunos g. 18T, Pastatymo metai 2021",
+      "id": "fountain_1746618923304_sa625brkr",
+      "source": "AquaMap",
+      "photo": ""
+    },
+    {
+      "lat": 55.73257195409519,
+      "lon": 21.125548428001366,
       "name": "Vandens Kolonėlė",
       "details": "Geriamas vanduo, Liepojos g. 10B",
-      "source": "vanduo-klaipeda.maps.arcgis.com"
-  },
-  {
-      "lat": "55.64227831787155",
-      "lon": "21.17073047786791",
+      "source": "vanduo-klaipeda.maps.arcgis.com",
+      "id": "fountain_1746618923304_w8c70dxcy",
+      "photo": ""
+    },
+    {
+      "lat": 55.64227831787155,
+      "lon": 21.17073047786791,
       "name": "Vandens Kolonėlė",
       "details": "Kairių g. 13",
-      "source": "vanduo-klaipeda.maps.arcgis.com"
-  },
-  {
-      "lat": "55.64148288158229",
-      "lon": "21.170990635327218",
+      "source": "vanduo-klaipeda.maps.arcgis.com",
+      "id": "fountain_1746618923304_5i7n52yl1",
+      "photo": ""
+    },
+    {
+      "lat": 55.64148288158229,
+      "lon": 21.170990635327218,
       "name": "Vandens Kolonėlė",
       "details": "Kairių g. 13",
-      "source": "vanduo-klaipeda.maps.arcgis.com"
-  },
-  {
-      "lat": "55.71117637590904",
-      "lon": "21.395003914552994",
+      "source": "vanduo-klaipeda.maps.arcgis.com",
+      "id": "fountain_1746618923304_87iacgx7s",
+      "photo": ""
+    },
+    {
+      "lat": 55.71117637590904,
+      "lon": 21.395003914552994,
       "name": "Vandens Kolonėlė",
       "details": "Klaipėdos g. 38, Gargždai",
-      "source": "vanduo-klaipeda.maps.arcgis.com"
-  },
-  {
-      "lat": "56.323396",
-      "lon": "22.885550",
-      "name": "Geriamojo vandens gertuvė",
+      "source": "vanduo-klaipeda.maps.arcgis.com",
+      "id": "fountain_1746618923304_ex4umzcjc",
+      "photo": ""
+    },
+    {
+      "lat": 56.323396,
+      "lon": 22.88555,
+      "name": "Vandens Kolonėlė",
       "details": "Vieta: Lazdynų Pelėdos g. 9, 85128 naujoji akmenė",
-      "photo": "data/cTaOflRrqh.png"
-  },
-  {
-      "lat": "55.253367466358505",
-      "lon": "22.28539605195527",
+      "photo": "data/cTaOflRrqh.png",
+      "id": "fountain_1746618923304_h0jtewuos",
+      "source": "AquaMap"
+    },
+    {
+      "lat": 55.253367466358505,
+      "lon": 22.28539605195527,
       "name": "Vandens Kolonėlė",
-      "details": "Pilies aikštėje"
-  },
-  {
-      "lat": "55.253382698255194",
-      "lon": "22.303754640919287",
-      "name": "Vandens Kolonėlė"
-  },
-  {
-      "lat": "55.24446978",
-      "lon": "22.279200699751144",
+      "details": "Pilies aikštėje",
+      "id": "fountain_1746618923304_ij63xmvws",
+      "source": "AquaMap",
+      "photo": ""
+    },
+    {
+      "lat": 55.253382698255194,
+      "lon": 22.303754640919287,
       "name": "Vandens Kolonėlė",
-      "details": "Vasaros estrada"
-  },
-  {
-      "lat": "55.25276004474157",
-      "lon": "22.290723919840588",
+      "id": "fountain_1746618923304_p12ls4t7b",
+      "details": "",
+      "source": "AquaMap",
+      "photo": ""
+    },
+    {
+      "lat": 55.24446978,
+      "lon": 22.279200699751144,
       "name": "Vandens Kolonėlė",
-      "details": "J. V. Kalvano parkas"
-  },
-  {
-      "lat": "55.0795529",
-      "lon": "22.7572071",
+      "details": "Vasaros estrada",
+      "id": "fountain_1746618923304_h8roup3qp",
+      "source": "AquaMap",
+      "photo": ""
+    },
+    {
+      "lat": 55.25276004474157,
+      "lon": 22.290723919840588,
       "name": "Vandens Kolonėlė",
-      "details": "Vieta: Vidūno g. prie Jurbarko krašto muziejaus"
-  }
-]
+      "details": "J. V. Kalvano parkas",
+      "id": "fountain_1746618923304_mnsscza51",
+      "source": "AquaMap",
+      "photo": ""
+    },
+    {
+      "lat": 55.0795529,
+      "lon": 22.7572071,
+      "name": "Vandens Kolonėlė",
+      "details": "Vieta: Vidūno g. prie Jurbarko krašto muziejaus",
+      "id": "fountain_1746618923304_u51suxpry",
+      "source": "AquaMap",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746619087826_q4f6ehkoq",
+      "name": "Vandens Kolonėlė",
+      "details": "Gedimino pr. 51 (Vilnius) Pritaikyta augintiniams",
+      "lat": 54.690423,
+      "lon": 25.263196,
+      "source": "vanduo-klaipeda.maps.arcgis.com",
+      "photo": "data/Gedimino_pr._51_(prie_Seimo).jpg"
+    },
+    {
+      "id": "fountain_1746620057545_5zw6qmt90",
+      "name": "Vandens Kolonėlė",
+      "details": "Architektų g. 72A (Ąžuolyno progimnazija)\nPritaikyta augintiniams",
+      "lat": 54.671467,
+      "lon": 25.20533,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746620149748_pvf2y7enu",
+      "name": "Vandens Kolonėlė",
+      "details": "Vydūno g. 17A (Pilaitė Martyno Mažvydo progimnazija) Pritaikyta augintiniams",
+      "lat": 54.705879,
+      "lon": 25.180761,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746620466592_ip2hv4k06",
+      "name": "Vandens Kolonėlė",
+      "details": "Pilaitės skveras (Simonaitytės g. 9)",
+      "lat": 54.71289,
+      "lon": 25.184999,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746620597230_ozs6qnm30",
+      "name": "Vandens Kolonėlė",
+      "details": "Taikos g. 157 (Vilnius) Pritaikyta augintiniams",
+      "lat": 54.716107,
+      "lon": 25.212254,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746620712746_ptqd49i07",
+      "name": "Vandens Kolonėlė",
+      "details": "Viršuliškių g. 37 (Lūžių parkas) Pritaikyta augintiniams",
+      "lat": 54.710587,
+      "lon": 25.219138,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746620892598_0s9xxnlw7",
+      "name": "Vandens Kolonėlė",
+      "details": "Viršuliškių skveras (Viršuliškių g. 32)",
+      "lat": 54.708898,
+      "lon": 25.22322,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746620987773_tvfjo3bto",
+      "name": "Vandens Kolonėlė",
+      "details": "Lūžių parkas (Rygos g. 10)",
+      "lat": 54.71592,
+      "lon": 25.224223,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746621020793_1wi9iepkq",
+      "name": "Vandens Kolonėlė",
+      "details": "Medeinos g. 6 (Pašilaičiai Riedučių parkas) Pritaikyta augintiniams",
+      "lat": 54.728734,
+      "lon": 25.226659,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746621070896_gpk290bwr",
+      "name": "Vandens Kolonėlė",
+      "details": "Gedvydžių g. 8 (Fabijoniškės Abraomo Kulviečio mokykla) Pritaikyta augintiniams",
+      "lat": 54.738045,
+      "lon": 25.237999,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746621130489_du56kjvbr",
+      "name": "Vandens Kolonėlė",
+      "details": "Stanevičiaus g. 55 (riedučių parkas) Pritaikyta augintiniams",
+      "lat": 54.728294,
+      "lon": 25.254977,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746621218050_3e35vagos",
+      "name": "Vandens Kolonėlė",
+      "details": "Stanevičiaus g. 25 (Vilnius) Pritaikyta augintiniams",
+      "lat": 54.723434,
+      "lon": 25.257906,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746621338604_ed50c7ix5",
+      "name": "Vandens Kolonėlė",
+      "details": "Didlaukio g. 23 (Vilnius) Pritaikyta augintiniams",
+      "lat": 54.731051,
+      "lon": 25.272444,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746621443185_4aotl83pe",
+      "name": "Vandens Kolonėlė",
+      "details": "Vito Gerulaičio g. 4 (Ozo parkas, krepšinio aikštelė) Pritaikyta augintiniams",
+      "lat": 54.717442,
+      "lon": 25.278023,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746621740605_57xy70lqn",
+      "name": "Vandens Kolonėlė",
+      "details": "Vito Gerulaičio g. 4 (Ozo parkas prie Kazio Ulvydo g. 11) Pritaikyta augintiniams",
+      "lat": 54.719224,
+      "lon": 25.279973,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746621948127_eilcivnwo",
+      "name": "Vandens Kolonėlė",
+      "details": "Minties g. 3A (Vilnius) Pritaikyta augintiniams",
+      "lat": 54.705346,
+      "lon": 25.298043,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746622017722_uv9rp11p4",
+      "name": "Vandens Kolonėlė",
+      "details": "Antakalnio g. 29 (prie mokyklos) Pritaikyta augintiniams",
+      "lat": 54.701208,
+      "lon": 25.310429,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746622164295_5mmc3bkgb",
+      "name": "Vandens Kolonėlė",
+      "details": "Sapiegų parkas (Antakalnio g. 17)",
+      "lat": 54.696812,
+      "lon": 25.309743,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746622197945_3hli689o6",
+      "name": "Vandens Kolonėlė",
+      "details": "S. Batoro g. 154 (N. Vilnios seniūnija) Pritaikyta augintiniams",
+      "lat": 54.692819,
+      "lon": 25.409338,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746622243145_v1agcydal",
+      "name": "Vandens Kolonėlė",
+      "details": "Kaukysos g. 18 (Kaukysos sporto aikštynas) Pritaikyta augintiniams",
+      "lat": 54.678372,
+      "lon": 25.318873,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746622321575_yyci0cazu",
+      "name": "Vandens Kolonėlė",
+      "details": "Vilnios takas (Paupys) Pritaikyta augintiniams",
+      "lat": 54.679878,
+      "lon": 25.303835,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746622377573_ynt6bo745",
+      "name": "Vandens Kolonėlė",
+      "details": "Filaretų g. 3 (Petro Vileišio progimnazija) Pritaikyta augintiniams",
+      "lat": 54.683415,
+      "lon": 25.305548,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746622434887_a0nvul6af",
+      "name": "Vandens Kolonėlė",
+      "details": "Maironio g. 2A (Bernardinų sodai 1) Pritaikyta augintiniams",
+      "lat": 54.683464,
+      "lon": 25.298536,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746622485298_8sxt6w295",
+      "name": "Vandens Kolonėlė",
+      "details": "Maironio g. 2A (Bernardinų sodai 2) Pritaikyta augintiniams",
+      "lat": 54.682528,
+      "lon": 25.297694,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746622517238_o39tvroke",
+      "name": "Vandens Kolonėlė",
+      "details": "Maironio g. (Onos bažnyčia) Pritaikyta augintiniams",
+      "lat": 54.683449,
+      "lon": 25.293113,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746622561041_zdbvy617l",
+      "name": "Vandens Kolonėlė",
+      "details": "Bernardinų teniso kortai (B. Radvilaitės g. 6C) Pritaikyta augintiniams",
+      "lat": 54.685743,
+      "lon": 25.294492,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746622661277_ffktyb7sv",
+      "name": "Vandens Kolonėlė",
+      "details": "Liejyklos g. (Stuokos Gucevičiaus skveras) Pritaikyta augintiniams",
+      "lat": 54.683734,
+      "lon": 25.283945,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746622722290_ik06nq6qu",
+      "name": "Vandens Kolonėlė",
+      "details": "Kraševskio g. (Žvėrynas) Pritaikyta augintiniams",
+      "lat": 54.68535,
+      "lon": 25.253196,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746622856952_5lywkyk7y",
+      "name": "Vandens Kolonėlė",
+      "details": "Vingio parkas (prie vartų iš Čiurlionio g. pusės) Pritaikyta augintiniams",
+      "lat": 54.682459,
+      "lon": 25.24655,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746622961740_b2i7hnpnp",
+      "name": "Vandens Kolonėlė",
+      "details": "M. K. Čiurlionio g. 100 (Vingio parkas prie žaidimų aikštelės) Pritaikyta augintiniams",
+      "lat": 54.6845,
+      "lon": 25.234453,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    },
+    {
+      "id": "fountain_1746623047636_90y00gs5z",
+      "name": "Vandens Kolonėlė",
+      "details": "Boriso Nemcovo skveras Latvių g. (Žvėrynas) Pritaikyta augintiniams",
+      "lat": 54.694283,
+      "lon": 25.242301,
+      "source": "vvandenys.maps.arcgis.com",
+      "photo": ""
+    }
+  ]
